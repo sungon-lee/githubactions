@@ -1,0 +1,18 @@
+{
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./derms-batch",
+        "-p",
+        "*_test.py"
+    ],
+    "python.testing.pytestEnabled": false,
+    "python.testing.unittestEnabled": true,
+    "mypy-type-checker.args": [
+		"--ignore-missing-imports", // 解決できないモジュール(スクリプト)のインポートを無視する。ただし、解決できない関数のインポートエラーは例外搬出される。
+		"--show-column-numbers", // エラー発生箇所を行列数で明示する。
+		"--check-untyped-defs", // アノテーションされていない関数定義の場合でも、関数内の型アノテーションをチェックする。
+		"--config-file=.mypy.ini"
+	],
+}
