@@ -8,8 +8,8 @@ from task.task import calculate_point
 class TestTaskDeliveryDrHistoryByUser(unittest.TestCase):
 
     def test_calculate_point_round_up(self):
-        result = calculate_point(Decimal('150'), 2)
-        self.assertEqual(result, Decimal('300'))
+        result = calculate_point(Decimal('100'), 2)
+        self.assertEqual(result, Decimal('200'))
 
     def test_calculate_point_no_rounding_needed(self):
         result = calculate_point(Decimal('2.0'), 10)

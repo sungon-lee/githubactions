@@ -46,3 +46,9 @@ jobs:
           echo "$top_folders"
           echo "::set-output name=folders::$top_folders"
 
+      - name: Run tests for changed top-level folders
+        run: |
+          echo "${{ steps.extract-folders.outputs.folders }}" | tr ' ' '\n' | while read folder; do
+            echo "Running tests in $folder/tests..."
+            find $folder/tests -name "*_test.py" -exec echo "Running test: {}" \; -exec python3 {} \;
+          done
