@@ -38,3 +38,11 @@ jobs:
           dirs=$(cat changed_files.txt | xargs -n 1 dirname | sort | uniq)
           echo "Directories with changes:"
           echo "$dirs"
+      
+      - name: Extract top-level folders
+        run: |
+          top_folders=$(cat changed_files.txt | awk -F'/' '{print $1}' | sort | uniq)
+          echo "Top-level folders:"
+          echo "$top_folders"
+          echo "::set-output name=folders::$top_folders"
+
