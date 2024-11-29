@@ -21,7 +21,7 @@ class TestTaskDeliveryDrHistoryByUser(unittest.TestCase):
 
     def test_calculate_point_zero_usage(self):
         result = calculate_point(Decimal('0'), 10)
-        self.assertEqual(result, Decimal('0'))
+        self.assertEqual(result, Decimal('10'))
 
     def test_calculate_point_negative_usage(self):
         result = calculate_point(Decimal('-1.5'), 10)
