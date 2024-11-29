@@ -1,0 +1,88 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Current File",
+        "type": "python",
+        "request": "launch",
+        "stopOnEntry": true,
+        "program": "${file}",
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "openOnFirstSessionStart",
+        "env": {
+          "PJ_PREFIX": "Derms",
+          // "PJ_PREFIX": "Kyuden",
+          "LOG_MODE": "stream",
+          "DEBUG_MODE": "1",
+          "EXEC_ENV": "dev",
+          "DRY_RUN": "1",
+          "Derms_PROFILE": "dev-derms-profile",
+          "PROFILE": "dev-derms-profile",
+          // "Derm_DB_PASS": "dev-derms-profile",
+        },
+      },
+      {
+        "name": "Python: main File",
+        "type": "python",
+        "request": "launch",
+        "stopOnEntry": true,
+        "program": "main.py",
+        "cwd": "${workspaceFolder}/src",
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "openOnFirstSessionStart",
+        "env": {
+          "PJ_PREFIX": "Derms",
+          // "PJ_PREFIX": "Kyuden",
+          // "PJ_PREFIX": "Rikuden",
+          // "PJ_PREFIX": "Tohokuepcopre",
+          "LOG_MODE": "stream",
+          "DEBUG_MODE": "1",
+          "EXEC_ENV": "dev",
+          "DRY_RUN": "1",
+          "Derms_PROFILE": "dev-derms-profile",
+          "PROFILE": "dev-derms-profile",
+          // "Derm_DB_PASS": "dev-derms-profile",
+        },
+      },
+      {
+        "name": "Python M: Current File",
+        "type": "python",
+        "request": "launch",
+        "stopOnEntry": true,
+        "program": "${file}",
+        "env": {
+          "PJ_PREFIX": "Derms",
+          // "PJ_PREFIX": "Kyuden",
+          "LOG_MODE": "stream",
+          "DEBUG_MODE": "1",
+          "EXEC_ENV": "dev",
+          "DRY_RUN": "1",
+          "Derms_PROFILE": "dev-derms-profile",
+          "PROFILE": "dev-derms-profile",
+          // "Derm_DB_PASS": "dev-derms-profile",
+        },
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "CDK Debugger",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "runtimeArgs": [
+          "-r",
+          "./node_modules/ts-node/register/transpile-only"
+        ],
+        "args": [
+          "${workspaceFolder}/bin/batch.ts"
+        ],
+        "env": {
+          "stage": "dev",
+        }
+      },
+    ]
+  }
