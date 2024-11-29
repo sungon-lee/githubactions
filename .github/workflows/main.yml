@@ -26,29 +26,8 @@ jobs:
       - uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
-      - name: Get changed files
+      - name: test
         run: |
-          git fetch origin ${{ github.event.before }}
-          git diff --name-only ${{ github.event.before }} ${{ github.sha }} > changed_files.txt
-          echo "Changed files:"
-          cat changed_files.txt
-
-      - name: Get directories of changed files
-        run: |
-          dirs=$(cat changed_files.txt | xargs -n 1 dirname | sort | uniq)
-          echo "Directories with changes:"
-          echo "$dirs"
-      
-      - name: Extract top-level folders
-        run: |
-          top_folders=$(cat changed_files.txt | awk -F'/' '{print $1}' | sort | uniq)
-          echo "Top-level folders:"
-          echo "$top_folders"
-          echo "::set-output name=folders::$top_folders"
-
-      - name: Run tests for changed top-level folders
-        run: |
-          echo "${{ steps.extract-folders.outputs.folders }}" | tr ' ' '\n' | while read folder; do
-            echo "Running tests in $folder/tests..."
-            find $folder/tests -name "*_test.py" -exec echo "Running test: {}" \; -exec python3 {} \;
-          done
+          echo "test"
+          cd derms-batch/tests/task
+          python -m unittest task_test.py 
