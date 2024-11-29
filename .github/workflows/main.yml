@@ -32,8 +32,7 @@ jobs:
       - name: test
         run: |
           echo "test"
-          echo "$PYTHONPATH"
-          PYTHONPATH=./src
+          export PYTHONPATH=$(pwd)/derms-batch/src:$PYTHONPATH
           echo "$PYTHONPATH"
           cd derms-batch/tests/task
           python -m unittest task_test.py 
