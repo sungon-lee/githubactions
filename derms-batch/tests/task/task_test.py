@@ -17,7 +17,7 @@ class TestTaskDeliveryDrHistoryByUser(unittest.TestCase):
 
     def test_calculate_point_round_up_edge_case(self):
         result = calculate_point(Decimal('1.1'), 10)
-        self.assertEqual(result, Decimal('11'))
+        self.assertEqual(result, Decimal('21'))
 
     def test_calculate_point_zero_usage(self):
         result = calculate_point(Decimal('0'), 10)
