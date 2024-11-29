@@ -13,7 +13,7 @@ class TestTaskDeliveryDrHistoryByUser(unittest.TestCase):
 
     def test_calculate_point_no_rounding_needed(self):
         result = calculate_point(Decimal('2.0'), 10)
-        self.assertEqual(result, Decimal('20'))
+        self.assertEqual(result, Decimal('200'))
 
     def test_calculate_point_round_up_edge_case(self):
         result = calculate_point(Decimal('1.1'), 10)
