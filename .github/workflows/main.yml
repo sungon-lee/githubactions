@@ -32,5 +32,6 @@ jobs:
       - name: test
         run: |
           echo "test"
+          PYTHONPATH=./src
           cd derms-batch/tests/task
           python -m unittest task_test.py 
